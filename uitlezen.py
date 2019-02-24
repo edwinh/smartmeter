@@ -67,7 +67,7 @@ else:
 #Initialize
 p1_teller = 0
 
-while True and (p1_teller < 26):
+while True and (p1_teller < len(mock_data)):
     p1_line=''
 
     if (not mock):
