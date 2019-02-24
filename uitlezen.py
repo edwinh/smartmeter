@@ -60,7 +60,7 @@ while True: #not last_line: #p1_teller < 26:
     if (p1_line.startswith("1-0:1.7.0")):
       start_actual = p1_line.find("(")
       end_actual = p1_line.find("*")
-      actual_value = int(p1_line[start_actual+1:end_actual].strip('.'))
+      actual_value = int(p1_line[start_actual+1:end_actual].replace('.', ''))
       print("Actual: " + str(actual_value) + " Watt")
     
     #print ("Line " + str(p1_teller) + ": " + p1_line)
