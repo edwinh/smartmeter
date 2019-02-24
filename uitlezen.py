@@ -98,7 +98,7 @@ while True and (p1_teller < len(mock_data)):
       #print(year, month, day, hour, minute, sec)
       # datetime(year, month, day, hour, minute, second, microsecond)
       b = datetime(year, month, day, hour, minute, sec, 0)
-      print("Datum/tijd: " , b)
+      print(b)
     
     # Meter 1
     if (p1_line.startswith("1-0:1.8.1")):
