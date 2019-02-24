@@ -4,6 +4,7 @@ versie = "1.1"
 import sys
 import serial
 
+
 ##############################################################################
 #Main program
 ##############################################################################
@@ -50,7 +51,10 @@ while True: #not last_line: #p1_teller < 26:
     
     # Meter 1
     if (p1_line.startswith("1-0:1.8.1")):
-      print("Meter 1: " + p1_line)
+      start_actual = p1_line.find("(")
+      end_actual = p1_line.find("*")
+      meter1_value = float(p1_line[start_actual+1:end_actual])
+      print("Meter 1: " + str(meter1_value) + " kWh")
 
     # Meter 2
     if (p1_line.startswith("1-0:1.8.2")):
