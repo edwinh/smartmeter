@@ -30,7 +30,7 @@ except:
 
 #Initialize
 #p1_teller is mijn tellertje voor van 0 tot 36 te tellen
-p1_teller=
+p1_teller  = 0
 last_line = False
 
 while not last_line #p1_teller < 26:
