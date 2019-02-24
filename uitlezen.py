@@ -43,8 +43,23 @@ while True: #not last_line: #p1_teller < 26:
     
     p1_str=str(p1_raw)
     p1_line=p1_str.strip()
+    
+    # date/time
     if (p1_line.startswith("0-0:1.0.0")):
       print("Datum/tijd: " + p1_line)
+    
+    # Meter 1
+    if (p1_line.startswith("1-0:1.8.1")):
+      print("Meter 1: " + p1_line)
+
+    # Meter 2
+    if (p1_line.startswith("1-0:1.8.2")):
+      print("Meter 2: " + p1_line)
+
+    # Actual
+    if (p1_line.startswith("1-0:1.7.0")):
+      print("Actual: " + p1_line)
+    
     #print ("Line " + str(p1_teller) + ": " + p1_line)
     p1_teller += 1
 
