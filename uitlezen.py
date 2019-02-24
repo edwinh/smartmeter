@@ -33,7 +33,7 @@ except:
 p1_teller=0
 last_line = False
 
-while not last_line:
+while True:
     p1_line=''
     #Read 1 line van de seriele poort
     try:
@@ -42,7 +42,8 @@ while not last_line:
         sys.exit ("Seriele poort %s kan niet gelezen worden. Aaaaaaaaarch." % ser.name )
     
     p1_str=str(p1_raw)
-    #last_line = (p1_str[0] == '!')
+    if (p1_str[0] == '!'):
+      p1_teller = 0
     #if (p1_teller == 11 or p1_teller == 4 or p1_teller == 6 or p1_teller == 7):
     p1_line=p1_str.strip()
     print ("Line " + str(p1_teller) + ": " + p1_line)
