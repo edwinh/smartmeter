@@ -3,6 +3,7 @@
 versie = "1.1"
 import sys
 import serial
+from datetime import datetime
 
 
 ##############################################################################
@@ -13,8 +14,10 @@ print ("Control-C om te stoppen")
 
 # argument: 'mock=true' -> show mock data + neat formatting
 # argument: 'mock=false' -> show real data + formatting
-
-mock = (sys.argv[1] == "mock=true")
+if (len(sys.argv) > 1):
+  mock = (sys.argv[1] == "mock=true")
+else:
+  mock = True
 
 if (not mock):
   #Set COM port config
@@ -83,7 +86,19 @@ while True and (p1_teller < len(mock_data)):
     
     # date/time
     if (p1_line.startswith("0-0:1.0.0")):
-      print("Datum/tijd: " + p1_line)
+      start = p1_line.find("(")
+      end = p1_line.find("W")
+      dt_value = p1_line[start+1:end]
+      year = int("20" + dt_value[:2])
+      month = int(dt_value[2:4])
+      day = int(dt_value[4:6])
+      hour = int(dt_value[6:8])
+      minute = int(dt_value[8:10])
+      sec = int(dt_value[10:12])
+      #print(year, month, day, hour, minute, sec)
+      # datetime(year, month, day, hour, minute, second, microsecond)
+      b = datetime(year, month, day, hour, minute, sec, 0)
+      print("Datum/tijd: " , b)
     
     # Meter 1
     if (p1_line.startswith("1-0:1.8.1")):
