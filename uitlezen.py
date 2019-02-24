@@ -60,7 +60,8 @@ while True: #not last_line: #p1_teller < 26:
     if (p1_line.startswith("1-0:1.7.0")):
       start_actual = p1_line.find("(")
       end_actual = p1_line.find("*")
-      print("Actual: " + p1_line[start_actual:end_actual])
+      actual_value = int(p1_line[start_actual+1:end_actual].strip('.'))
+      print("Actual: " + actual_value)
     
     #print ("Line " + str(p1_teller) + ": " + p1_line)
     p1_teller += 1
