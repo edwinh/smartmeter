@@ -77,7 +77,7 @@ while True and (p1_teller <= 26):
       except:
           sys.exit ("Seriele poort %s kan niet gelezen worden. Aaaaaaaaarch." % ser.name )
     else:
-      p1_line = mock_data[p1_teller]
+      p1_raw = mock_data[p1_teller]
       p1_teller += 1
         
     p1_str=str(p1_raw)
