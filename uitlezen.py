@@ -80,7 +80,6 @@ while True and (p1_teller < len(mock_data)):
         
     p1_str=str(p1_raw)
     p1_line=p1_str.strip()
-    print (p1_)
     
     # date/time
     if (p1_line.startswith("0-0:1.0.0")):
