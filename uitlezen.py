@@ -33,7 +33,7 @@ except:
 p1_teller  = 0
 last_line = False
 
-while not last_line: #p1_teller < 26:
+while True: #not last_line: #p1_teller < 26:
     p1_line=''
     #Read 1 line van de seriele poort
     try:
