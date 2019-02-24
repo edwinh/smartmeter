@@ -40,10 +40,10 @@ while p1_teller < 26:
     except:
         sys.exit ("Seriele poort %s kan niet gelezen worden. Aaaaaaaaarch." % ser.name )
     
-    if (p1_teller == 11):
-      p1_str=str(p1_raw)
-      p1_line=p1_str.strip()
-      print (p1_line)
+    #if (p1_teller == 11):
+    p1_str=str(p1_raw)
+    p1_line=p1_str.strip()
+    print (p1_line)
     p1_teller += 1
 
 #Close port and show status
