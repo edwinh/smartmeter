@@ -58,7 +58,10 @@ while True: #not last_line: #p1_teller < 26:
 
     # Meter 2
     if (p1_line.startswith("1-0:1.8.2")):
-      print("Meter 2: " + p1_line)
+      start_actual = p1_line.find("(")
+      end_actual = p1_line.find("*")
+      meter2_value = float(p1_line[start_actual+1:end_actual])
+      print("Meter 2: " + str(meter2_value) + " kWh")
 
     # Actual
     if (p1_line.startswith("1-0:1.7.0")):
