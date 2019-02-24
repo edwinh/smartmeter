@@ -40,6 +40,7 @@ while p1_teller < 26:
         p1_raw = ser.readline()
     except:
         sys.exit ("Seriele poort %s kan niet gelezen worden. Aaaaaaaaarch." % ser.name )
+    
     if (p1_teller == 9):
       p1_str=str(p1_raw)
       p1_line=p1_str.strip()
