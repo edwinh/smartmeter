@@ -9,7 +9,6 @@ import serial
 ##############################################################################
 print ("DSMR P1 uitlezen",  versie)
 print ("Control-C om te stoppen")
-print ("Pas eventueel de waarde ser.port aan in het python script")
 
 #Set COM port config
 ser = serial.Serial()
@@ -41,7 +40,7 @@ while p1_teller < 26:
     except:
         sys.exit ("Seriele poort %s kan niet gelezen worden. Aaaaaaaaarch." % ser.name )
     
-    if (p1_teller == 9):
+    if (p1_teller == 11):
       p1_str=str(p1_raw)
       p1_line=p1_str.strip()
       print (p1_line)
