@@ -122,7 +122,8 @@ while True and (p1_teller < len(mock_data)):
       print("Actual: " + str(actual_value) + " Watt")
     
     #print ("Line " + str(p1_teller) + ": " + p1_line)
-    p1_teller += 1
+    íf mock:
+      p1_teller += 1
 
 #Close port and show status
 if (not mock):
