@@ -43,7 +43,7 @@ while p1_teller < 26:
     #if (p1_teller == 11):
     p1_str=str(p1_raw)
     p1_line=p1_str.strip()
-    print (p1_line)
+    print ("Line " + str(p1_teller) + ": " + p1_line)
     p1_teller += 1
 
 #Close port and show status
