@@ -31,9 +31,8 @@ except:
 #Initialize
 #p1_teller is mijn tellertje voor van 0 tot 36 te tellen
 p1_teller=0
-last_line = False
 
-while True:
+while p1_teller < 26:
     p1_line=''
     #Read 1 line van de seriele poort
     try:
@@ -41,12 +40,10 @@ while True:
     except:
         sys.exit ("Seriele poort %s kan niet gelezen worden. Aaaaaaaaarch." % ser.name )
     
-    p1_str=str(p1_raw)
-    if (p1_str[0] == '!'):
-      p1_teller = 0
-    #if (p1_teller == 11 or p1_teller == 4 or p1_teller == 6 or p1_teller == 7):
-    p1_line=p1_str.strip()
-    print ("Line " + str(p1_teller) + ": " + p1_line)
+    #if (p1_teller == 11 or p1_teller == 4):
+  p1_str=str(p1_raw)
+  p1_line=p1_str.strip()
+  print ("Line " + str(p1_teller) + ": " + p1_line)
     p1_teller += 1
 
 #Close port and show status
