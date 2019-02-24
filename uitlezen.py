@@ -44,7 +44,7 @@ while p1_teller < 26:
     p1_line=p1_str.strip()
 # als je alles wil zien moet je de volgende line uncommenten
     print (p1_line)
-    p1_teller = p1_teller +1
+    p1_teller += 1
 
 #Close port and show status
 try:
