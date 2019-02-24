@@ -10,7 +10,6 @@ import serial
 ##############################################################################
 print ("DSMR P1 uitlezen",  versie)
 print ("Control-C om te stoppen")
-print (sys.argv)
 
 # argument: 'mock=true' -> show mock data + neat formatting
 # argument: 'mock=false' -> show real data + formatting
