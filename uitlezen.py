@@ -32,9 +32,9 @@ except:
 #p1_teller is mijn tellertje voor van 0 tot 36 te tellen
 p1_teller=0
 
-while p1_teller < 26:
+while p1_teller < 36:
     p1_line=''
-#Read 1 line van de seriele poort
+    #Read 1 line van de seriele poort
     try:
         p1_raw = ser.readline()
     except:
