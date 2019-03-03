@@ -54,8 +54,6 @@ def main():
             sys.exit ("Seriele poort %s kan niet gelezen worden. Aaaaaaaaarch." % ser.name )
       else:
         p1_line = extract_telegram.mock_data[p1_teller]
-          
-
 
       result = extract_telegram.decode_line(p1_line)
       if result != None:
