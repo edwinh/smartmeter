@@ -41,7 +41,7 @@ def read_live_data():
   p1_teller = 0
   done = False
   first_line_read = False
-
+  
   while not done:
       p1_line=''
 
@@ -56,6 +56,7 @@ def read_live_data():
       if first_line_read:
         result = extract_telegram.decode_line(p1_line)
         if result != None:
+
           print (result)
 
       done = (first_line_read and len(p1_line) > 0 and p1_line[0] == '!')
