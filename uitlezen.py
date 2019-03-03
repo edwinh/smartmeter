@@ -50,7 +50,7 @@ def read_live_data():
           p1_line = p1_line[2:-1]
       except:
           sys.exit ("Seriele poort %s kan niet gelezen worden. Aaaaaaaaarch." % ser.name )
-
+      print(p1_line)
       first_line_read = first_line_read or (len(p1_line) > 0 and p1_line[0] == '/')
       if first_line_read:
         result = extract_telegram.decode_line(p1_line)
