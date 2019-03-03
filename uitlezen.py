@@ -29,16 +29,14 @@ def read_live_data():
   ser.rtscts=0
   ser.timeout=20
   ser.port="/dev/ttyUSB0"
-  telegram_length = 26
 
   #Open COM port
   try:
-      ser.open()
+    ser.open()
   except:
-      sys.exit ("Fout bij het openen van %s. Aaaaarch."  % ser.name)
+    sys.exit ("Fout bij het openen van %s. Aaaaarch."  % ser.name)
 
   #Initialize
-  p1_teller = 0
   done = False
   first_line_read = False
   
