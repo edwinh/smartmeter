@@ -46,7 +46,7 @@ def read_live_data():
       #Read 1 line van de seriele poort
       try:
           p1_line = str(ser.readline()).strip()
-          # Remove \r\n from the end of the lin
+          # Remove b' from beginning and \r\n from the end of the line
           p1_line = p1_line[2:-5]
       except:
           sys.exit ("Seriele poort %s kan niet gelezen worden. Aaaaaaaaarch." % ser.name )
@@ -54,7 +54,7 @@ def read_live_data():
       if first_line_read:
         result = extract_telegram.decode_line(p1_line)
         if result != None:
-          print (result)
+          return result
 
       done = (first_line_read and len(p1_line) > 0 and p1_line[0] == '!')
 
@@ -76,9 +76,9 @@ def main():
     mock = True
 
   if mock:
-    read_mock_data()
+    print(read_mock_data())
   else:
-    read_live_data()
+    print(read_live_data())
 
   return
 
