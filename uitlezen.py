@@ -45,8 +45,7 @@ def read_live_data():
 
       #Read 1 line van de seriele poort
       try:
-          p1_raw= ser.readline()
-          p1_line = str(p1_raw).strip()
+          p1_line = str(ser.readline()).strip()
           # Remove \r\n from the end of the lin
           p1_line = p1_line[2:-5]
       except:
