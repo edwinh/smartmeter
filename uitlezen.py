@@ -77,10 +77,12 @@ def main():
     mock = True
 
   if mock:
-    print(read_mock_data())
+    result = read_mock_data()
   else:
-    print(read_live_data())
+    result = read_live_data()
 
+  for i in range(0,len(result)):
+    print (result[i])
   return
 
 main()
