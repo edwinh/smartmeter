@@ -5,18 +5,21 @@ import sys
 import serial
 from datetime import datetime
 import extract_telegram
+import json
+import requests
 
 def read_mock_data():
   p1_teller = 0
+  telegram = []
   while (p1_teller < len(extract_telegram.mock_data)):
     p1_line=''
     p1_line = extract_telegram.mock_data[p1_teller]
     result = extract_telegram.decode_line(p1_line)
     if result != None:
-      print (result)
+      telegram.append(result)
     
     p1_teller += 1
-  return
+  return telegram
 
 def read_live_data():
   #Set COM port config
@@ -81,9 +84,23 @@ def main():
   else:
     result = read_live_data()
 
+  json_dict = {}
   for i in range(0,len(result)):
-    print (result[i])
+    linetype = result[i][0]
+    if linetype == "dt":
+      json_dt = result[i][2].strftime('%Y-%m-%dT%H:%M:%S.%fZ')
+      json_dict[result[i][0]] = json_dt
+    if linetype == "kwh_c1" or linetype == "kwh_c2":
+      json_dict[result[i][0]] = float(result[i][2])
+  
+  print (json_dict)
+  headers = {
+        'Content-Type': 'application/json'}
+  response = requests.post("http://127.0.0.1:5000/electricity", headers = headers, data = json.dumps(json_dict))
+  print (response.status_code, response)
+
+
+  
   return
 
 main()
-
