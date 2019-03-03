@@ -48,7 +48,6 @@ def read_live_data():
           p1_raw= ser.readline()
           p1_line = str(p1_raw).strip()
           p1_line = p1_line[2:-4]
-          print(p1_line)
       except:
           sys.exit ("Seriele poort %s kan niet gelezen worden. Aaaaaaaaarch." % ser.name )
       first_line_read = first_line_read or (len(p1_line) > 0 and p1_line[0] == '/')
