@@ -97,7 +97,7 @@ def main():
   print (json_dict)
   headers = {
         'Content-Type': 'application/json'}
-  response = requests.post("http://1192.168.72.4:5000/electricity", headers = headers, data = json.dumps(json_dict))
+  response = requests.post("http://192.168.72.4:5000/electricity", headers = headers, data = json.dumps(json_dict))
   print (response.status_code, response)
 
 
