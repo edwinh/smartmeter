@@ -7,6 +7,7 @@ from datetime import datetime
 import extract_telegram
 import json
 import requests
+import time
 
 def read_mock_data():
   p1_teller = 0
@@ -96,11 +97,13 @@ def main():
   print (json_dict)
   headers = {
         'Content-Type': 'application/json'}
-  response = requests.post("http://192.168.72.108:5000/electricity", headers = headers, data = json.dumps(json_dict))
+  response = requests.post("http://127.0.0.1:5000/electricity", headers = headers, data = json.dumps(json_dict))
   print (response.status_code, response)
 
 
   
   return
 
-main()
+while True:
+  main()
+  time.sleep(5)
