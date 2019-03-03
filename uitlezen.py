@@ -56,7 +56,7 @@ def read_live_data():
       if result != None:
         print (result)
 
-      done = (p1_line[0] == "!")
+      done = (len(p1_line > 0) and p1_line[0] == "!")
   return
 
 def main():
