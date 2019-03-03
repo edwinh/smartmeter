@@ -47,14 +47,15 @@ def main():
       if (not mock):
         #Read 1 line van de seriele poort
         try:
-            p1_line= ser.readline()
+            p1_raw= ser.readline()
+            p1_str=str(p1_raw)
+            p1_line=p1_str.strip()
         except:
             sys.exit ("Seriele poort %s kan niet gelezen worden. Aaaaaaaaarch." % ser.name )
       else:
         p1_line = extract_telegram.mock_data[p1_teller]
           
-      #p1_str=str(p1_raw)
-      #p1_line=p1_str.strip()
+
 
       result = extract_telegram.decode_line(p1_line)
       if result != None:
