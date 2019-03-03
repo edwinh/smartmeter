@@ -41,7 +41,7 @@ def main():
   #Initialize
   p1_teller = 0
 
-  while (p1_teller < len(mock_data)):
+  while (p1_teller < len(extract_telegram.mock_data)):
       p1_line=''
 
       if (not mock):
@@ -51,7 +51,7 @@ def main():
         except:
             sys.exit ("Seriele poort %s kan niet gelezen worden. Aaaaaaaaarch." % ser.name )
       else:
-        p1_line = mock_data[p1_teller]
+        p1_line = extract_telegram.mock_data[p1_teller]
           
       #p1_str=str(p1_raw)
       #p1_line=p1_str.strip()
