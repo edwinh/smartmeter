@@ -39,6 +39,7 @@ def read_live_data():
   #Initialize
   done = False
   first_line_read = False
+  telegram = []
   
   while not done:
       p1_line=''
@@ -54,7 +55,7 @@ def read_live_data():
       if first_line_read:
         result = extract_telegram.decode_line(p1_line)
         if result != None:
-          return result
+          telegram.append(result)
 
       done = (first_line_read and len(p1_line) > 0 and p1_line[0] == '!')
 
@@ -62,7 +63,7 @@ def read_live_data():
         ser.close()
   except:
       sys.exit ("Oops %s. Programma afgebroken. Kon de seriele poort niet sluiten." % ser.name )
-  return
+  return telegram
 
 def main():
   ##############################################################################
