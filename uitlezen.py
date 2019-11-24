@@ -95,10 +95,10 @@ def main():
       json_dict[result[i][0]] = float(result[i][2])
   
   print (json_dict)
-  headers = {
-        'Content-Type': 'application/json'}
-  response = requests.post("http://127.0.0.1:5000/electricity", headers = headers, data = json.dumps(json_dict))
-  print (response.status_code, response)
+  #headers = {
+  #      'Content-Type': 'application/json'}
+  #response = requests.post("http://127.0.0.1:5000/electricity", headers = headers, data = json.dumps(json_dict))
+  #print (response.status_code, response)
 
 
   
